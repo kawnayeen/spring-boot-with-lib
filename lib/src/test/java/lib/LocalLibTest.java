@@ -6,9 +6,9 @@ package lib;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class LibraryTest {
+class LocalLibTest {
     @Test void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
+        LocalLib classUnderTest = new LocalLib();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
 }

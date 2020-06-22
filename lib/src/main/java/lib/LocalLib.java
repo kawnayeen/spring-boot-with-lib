@@ -3,8 +3,12 @@
  */
 package lib;
 
-public class Library {
+public class LocalLib {
     public boolean someLibraryMethod() {
         return true;
+    }
+
+    public String sayHello() {
+        return "Hello from local java library";
     }
 }
