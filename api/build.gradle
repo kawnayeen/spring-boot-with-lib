@@ -8,13 +8,25 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '14'
 
+def props = new Properties()
+file("build.properties").withInputStream { props.load(it) }
+
 repositories {
     mavenCentral()
+
+    maven {
+        url "https://maven.pkg.github.com/kawnayeen/hello-package"
+        credentials {
+            username "kawnayeen"
+            password props.getProperty("token")
+        }
+    }
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation project(':lib')
+    implementation 'com.kawnayeen:hello-package:0.2'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
